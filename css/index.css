@@ -2,7 +2,14 @@ body {
   margin: 0px;
   background-color: #e6e6e6;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  transition: .7s; }
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  opacity: .7; }
 
 .page {
   flex-flow: wrap column;
@@ -79,6 +86,24 @@ button:focus {
   100% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(90, 153, 212, 0); } }
+
+.night {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #595a5b;
+  color: white;
+  transition: .7s;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: block;
+  left: 30px;
+  border: none; }
+
+.night:active {
+  transform: scale(0.6);
+  transition: .7s; }
 
 .loader {
   border: 16px solid #f3f3f3;

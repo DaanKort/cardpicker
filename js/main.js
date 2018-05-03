@@ -45,16 +45,30 @@ function showCard () {
 		arr = arr[Math.floor((Math.random() * arr.length) )].image;
 		rndCard = '<img class="card"  src="' + arr + '" />';
 		app.innerHTML = rndCard;
-
 		document.querySelector( "#random" ).disabled = false;
 	})();
-	
 }
 
 const show = document.querySelector( "#random" );
 show.addEventListener('click' ,function (event){
 	showCard();
 });
+
+const night =  document.querySelector( "#night" );
+night.addEventListener('click' ,function (event){
+	if ( night.value == "Night On" )
+	{
+	document.querySelector( "body" ).style.backgroundColor = "orange", opacity = .7;
+	document.querySelector( "#random" ).style.color = "black";
+	night.value = "Night Off";
+	console.log( night.value );
+	}else 
+	{
+		document.querySelector( "body" ).style.backgroundColor = "#e6e6e6";
+		document.querySelector( "#random" ).style.color = "white";
+		night.value = "Night On";
+		console.log( night.value );
+	}});
 
 getDeck('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
 
