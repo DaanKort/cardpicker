@@ -75,6 +75,8 @@ show.addEventListener('click' ,function (event){
 		_head.appendChild(_sheet);
 		return this;
 	};
+
+const random = document.querySelector ("#random");
 const sun = document.querySelector ("#sun");
 const moon = document.querySelector ("#moon");
 const invert = document.querySelector ( "img" )
@@ -83,9 +85,10 @@ const expand = document.querySelector( "#expand" );
 const fold = document.querySelector( "#fold" );
 const contract = document.querySelector( "#contract" );
 expand.addEventListener( 'click', (event) =>{
+	random.style.filter = "grayscale(100%)";
 	moon.style.opacity = "0";
 	sun.style.opacity = "1";
-	expand.innerHTML = "<style>.card {filter: invert(100%) grayscale(100%);}</style>";
+	expand.innerHTML = "<style>.card {filter: invert(100%) grayscale(100%);} .loader {filter: grayscale(100%);}</style>";
 	expand.style.cursor = "default";
 	contract.style.cursor = "pointer";
 	header.classList.toggle("whitetext");
@@ -97,6 +100,7 @@ expand.addEventListener( 'click', (event) =>{
 });
 
 contract.addEventListener( 'click', (event) =>{
+	random.style.filter = "grayscale(0%)";
 	moon.style.opacity = "1";
 	sun.style.opacity = "0";
 	expand.innerHTML = "";
