@@ -5,6 +5,9 @@ body {
   height: 100%;
   transition: .7s; }
 
+img {
+  transition: 2s; }
+
 .cover {
   width: 100%;
   height: 100%;
@@ -18,6 +21,25 @@ body {
   text-align: center;
   display: inline; }
 
+.nightmode {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  z-index: 1; }
+  .nightmode__expand {
+    top: 0;
+    left: 0;
+    cursor: pointer; }
+  .nightmode__contract {
+    right: 0;
+    bottom: 0; }
+
+h2 {
+  transition: 2s; }
+
+.whitetext {
+  color: white; }
+
 .fold:before {
   content: "";
   position: absolute;
@@ -27,7 +49,8 @@ body {
   height: 0px;
   border-bottom: 70px solid #eee;
   border-left: 70px solid transparent;
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3); }
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+  transition: 2s; }
 
 .fold:after {
   content: "";
@@ -36,8 +59,10 @@ body {
   left: 0%;
   width: 0px;
   height: 0px;
-  border-top: 69px solid #272822;
-  border-right: 69px solid transparent; }
+  border-top: 70px solid #272822;
+  border-right: 70px solid transparent;
+  z-index: -1;
+  transition: 2s; }
 
 .app {
   display: flex;
@@ -56,8 +81,6 @@ body {
   height: 100px;
   font-size: 17px;
   text-transform: uppercase;
-  line-height: 100px;
-  letter-spacing: .5px;
   color: white;
   border: none;
   border-radius: 50%;

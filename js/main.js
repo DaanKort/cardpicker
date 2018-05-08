@@ -53,22 +53,59 @@ const show = document.querySelector( "#random" );
 show.addEventListener('click' ,function (event){
 	showCard();
 });
+	var UID = {
+		_current: 0,
+		getNew: function(){
+			this._current++;
+			return this._current;
+		}
+	};
+	
+	HTMLElement.prototype.pseudoStyle = function(element,prop,value){
+		var _this = this;
+		var _sheetId = "pseudoStyles";
+		var _head = document.head || document.getElementsByTagName('head')[0];
+		var _sheet = document.getElementById(_sheetId) || document.createElement('style');
+		_sheet.id = _sheetId;
+		var className = "pseudoStyle" + UID.getNew();
+		
+		_this.className +=  " "+className; 
+		
+		_sheet.innerHTML += "\n."+className+":"+element+"{"+prop+":"+value+"}";
+		_head.appendChild(_sheet);
+		return this;
+	};
 
-const night =  document.querySelector( "#night" );
-night.addEventListener('click' ,function (event){
-	if ( night.value == "Night On" )
-	{
-	document.querySelector( "body" ).style.backgroundColor = "orange", opacity = .7;
-	document.querySelector( "#random" ).style.color = "black";
-	night.value = "Night Off";
-	console.log( night.value );
-	}else 
-	{
-		document.querySelector( "body" ).style.backgroundColor = "#e6e6e6";
-		document.querySelector( "#random" ).style.color = "white";
-		night.value = "Night On";
-		console.log( night.value );
-	}});
+const invert = document.querySelector ( "img" )
+const header = document.querySelector( "#header" );
+const expand = document.querySelector( "#expand" );
+const fold = document.querySelector( "#fold" );
+const contract = document.querySelector( "#contract" );
+expand.addEventListener( 'click', (event) =>{
+	expand.innerHTML = "<style>.card {filter: invert(100%) grayscale(100%);}</style>";
+	expand.style.cursor = "default";
+	contract.style.cursor = "pointer";
+	header.classList.toggle("whitetext");
+	fold.pseudoStyle("before", "border-bottom", "2200px solid #eee");
+	fold.pseudoStyle("before", "border-left", "2200px solid transparent");
+	fold.pseudoStyle("after", "border-top", "2200px solid #272822");
+	fold.pseudoStyle("after", "border-right", "2200px solid transparent");
+	console.log( "pls" );
+});
+
+contract.addEventListener( 'click', (event) =>{
+	expand.innerHTML = "";
+	expand.style.cursor = "pointer";
+	contract.style.cursor = "default";
+	header.classList.toggle("whitetext");
+	fold.pseudoStyle("before", "border-bottom", "70px solid #eee");
+	fold.pseudoStyle("before", "border-left", "70px solid transparent");
+	fold.pseudoStyle("after", "border-top", "70px solid #272822");
+	fold.pseudoStyle("after", "border-right", "70px solid transparent");
+	console.log( "pls1" );
+});
+
+
 
 getDeck('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
 
