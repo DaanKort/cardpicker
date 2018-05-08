@@ -75,13 +75,16 @@ show.addEventListener('click' ,function (event){
 		_head.appendChild(_sheet);
 		return this;
 	};
-
+const sun = document.querySelector ("#sun");
+const moon = document.querySelector ("#moon");
 const invert = document.querySelector ( "img" )
 const header = document.querySelector( "#header" );
 const expand = document.querySelector( "#expand" );
 const fold = document.querySelector( "#fold" );
 const contract = document.querySelector( "#contract" );
 expand.addEventListener( 'click', (event) =>{
+	moon.style.opacity = "0";
+	sun.style.opacity = "1";
 	expand.innerHTML = "<style>.card {filter: invert(100%) grayscale(100%);}</style>";
 	expand.style.cursor = "default";
 	contract.style.cursor = "pointer";
@@ -94,6 +97,8 @@ expand.addEventListener( 'click', (event) =>{
 });
 
 contract.addEventListener( 'click', (event) =>{
+	moon.style.opacity = "1";
+	sun.style.opacity = "0";
 	expand.innerHTML = "";
 	expand.style.cursor = "pointer";
 	contract.style.cursor = "default";
