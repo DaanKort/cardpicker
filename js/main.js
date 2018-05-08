@@ -89,7 +89,7 @@ expand.addEventListener( 'click', (event) =>{
 	expand.style.cursor = "default";
 	contract.style.cursor = "pointer";
 	header.classList.toggle("whitetext");
-	fold.pseudoStyle("before", "border-bottom", "2200px solid #eee");
+	fold.pseudoStyle("before", "border-bottom", "2200px solid #e6e6e6");
 	fold.pseudoStyle("before", "border-left", "2200px solid transparent");
 	fold.pseudoStyle("after", "border-top", "2200px solid #272822");
 	fold.pseudoStyle("after", "border-right", "2200px solid transparent");
@@ -103,7 +103,7 @@ contract.addEventListener( 'click', (event) =>{
 	expand.style.cursor = "pointer";
 	contract.style.cursor = "default";
 	header.classList.toggle("whitetext");
-	fold.pseudoStyle("before", "border-bottom", "70px solid #eee");
+	fold.pseudoStyle("before", "border-bottom", "70px solid #e6e6e6");
 	fold.pseudoStyle("before", "border-left", "70px solid transparent");
 	fold.pseudoStyle("after", "border-top", "70px solid #272822");
 	fold.pseudoStyle("after", "border-right", "70px solid transparent");
