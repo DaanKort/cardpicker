@@ -4,10 +4,22 @@ body {
     width: 100%;
 	height: 100%;
 	transition: .7s;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 img{
 	transition: 2s;
+}
+
+.nightmode__icon {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	&--moon {
+		top: 10;
+		left: 10;
+	}
 }
 
 .cover {
@@ -79,6 +91,7 @@ h2 {
 	justify-content: center;
 	align-items: center;
 	height: 450px;
+	z-index: 10;
 }
 .random{
   position: relative;
