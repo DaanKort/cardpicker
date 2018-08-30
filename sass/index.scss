@@ -110,7 +110,6 @@ h2 {
 	justify-content: center;
 	align-items: center;
 	height: 450px;
-	z-index: 10;
 }
 .random{
   position: relative;
@@ -184,3 +183,48 @@ button:focus {outline:0;}
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
   }
+
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+.container {
+	position: relative;
+	width: 600px;
+	bottom: 510px;
+    left: 1065px;
+	
+	svg {
+		max-width: 45rem;
+		width: 100%;
+		height: auto;
+		fill: none;
+		stroke: green;
+		stroke-width: 4;
+		
+		tspan > tspan {
+			stroke-dasharray: 1500;
+			stroke-dashoffset: -1500;
+			
+			@for $i from 1 through 15 {
+				
+				&:nth-of-type(#{$i}) {
+					animation: draw 300ms #{$i * 150}ms forwards;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+@keyframes draw {
+	
+	100% {
+		stroke-dashoffset: 0;
+	}
+	
+}

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 body {
   margin: 0px;
   background-color: #e6e6e6;
@@ -95,8 +96,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 450px;
-  z-index: 10; }
+  height: 450px; }
 
 .random {
   position: relative;
@@ -169,3 +169,53 @@ button:focus {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.container {
+  position: relative;
+  width: 600px;
+  bottom: 510px;
+  left: 1065px; }
+  .container svg {
+    max-width: 45rem;
+    width: 100%;
+    height: auto;
+    fill: none;
+    stroke: green;
+    stroke-width: 4; }
+    .container svg tspan > tspan {
+      stroke-dasharray: 1500;
+      stroke-dashoffset: -1500; }
+      .container svg tspan > tspan:nth-of-type(1) {
+        animation: draw 300ms 150ms forwards; }
+      .container svg tspan > tspan:nth-of-type(2) {
+        animation: draw 300ms 300ms forwards; }
+      .container svg tspan > tspan:nth-of-type(3) {
+        animation: draw 300ms 450ms forwards; }
+      .container svg tspan > tspan:nth-of-type(4) {
+        animation: draw 300ms 600ms forwards; }
+      .container svg tspan > tspan:nth-of-type(5) {
+        animation: draw 300ms 750ms forwards; }
+      .container svg tspan > tspan:nth-of-type(6) {
+        animation: draw 300ms 900ms forwards; }
+      .container svg tspan > tspan:nth-of-type(7) {
+        animation: draw 300ms 1050ms forwards; }
+      .container svg tspan > tspan:nth-of-type(8) {
+        animation: draw 300ms 1200ms forwards; }
+      .container svg tspan > tspan:nth-of-type(9) {
+        animation: draw 300ms 1350ms forwards; }
+      .container svg tspan > tspan:nth-of-type(10) {
+        animation: draw 300ms 1500ms forwards; }
+      .container svg tspan > tspan:nth-of-type(11) {
+        animation: draw 300ms 1650ms forwards; }
+      .container svg tspan > tspan:nth-of-type(12) {
+        animation: draw 300ms 1800ms forwards; }
+      .container svg tspan > tspan:nth-of-type(13) {
+        animation: draw 300ms 1950ms forwards; }
+      .container svg tspan > tspan:nth-of-type(14) {
+        animation: draw 300ms 2100ms forwards; }
+      .container svg tspan > tspan:nth-of-type(15) {
+        animation: draw 300ms 2250ms forwards; }
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0; } }

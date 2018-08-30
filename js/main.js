@@ -17,7 +17,7 @@ function getDeck(url){
 	})
 	.then(function(myJson) {
 		define.deckId = myJson.deck_id;
-		getCards(`https://deckofcardsapi.com/api/deck/${define.deckId}/draw/?count=9`);
+		getCards(`https://deckofcardsapi.com/api/deck/${define.deckId}/draw/?count=10`);
 	});
 }
 
@@ -42,7 +42,7 @@ function showCard () {
 		app.appendChild(element);
 		await new Promise(resolve => setTimeout(resolve, (Math.random()*2000)+1));
 		let arr = define.deck.cards;
-		arr = arr[Math.floor((Math.random() * arr.length) )].image;
+		arr = arr[Math.floor( ( Math.random() * arr.length ) )].image;
 		rndCard = '<img class="card"  src="' + arr + '" />';
 		app.innerHTML = rndCard;
 		document.querySelector( "#random" ).disabled = false;
@@ -53,6 +53,7 @@ const show = document.querySelector( "#random" );
 show.addEventListener('click' ,function (event){
 	showCard();
 });
+
 	var UID = {
 		_current: 0,
 		getNew: function(){
@@ -96,7 +97,6 @@ expand.addEventListener( 'click', (event) =>{
 	fold.pseudoStyle("before", "border-left", "2200px solid transparent");
 	fold.pseudoStyle("after", "border-top", "2200px solid #272822");
 	fold.pseudoStyle("after", "border-right", "2200px solid transparent");
-	console.log( "pls" );
 });
 
 contract.addEventListener( 'click', (event) =>{
@@ -111,10 +111,7 @@ contract.addEventListener( 'click', (event) =>{
 	fold.pseudoStyle("before", "border-left", "70px solid transparent");
 	fold.pseudoStyle("after", "border-top", "70px solid #272822");
 	fold.pseudoStyle("after", "border-right", "70px solid transparent");
-	console.log( "pls1" );
 });
-
-
 
 getDeck('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
 
